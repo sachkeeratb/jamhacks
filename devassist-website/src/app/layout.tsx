@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
 	title: 'DevAssist - Modern Developer Tools',
 	description:
-		'A modern, modular developer tool suite for HTTP inspection, security analysis, code intelligence and eco impact analysis.'
+		'A modern, modular developer tool suite for HTTP inspection, security analysis, code intelligence and ecoimpact analysis.'
 };
 
 export default function RootLayout({
