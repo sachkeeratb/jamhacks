@@ -266,6 +266,56 @@ Keep your explanation to a single paragraph without line breaks.
 			language = 'Java';
 		} else if (code.includes('#include') && code.includes('int main(')) {
 			language = 'C/C++';
+		} else if (
+			code.includes('package main') &&
+			code.includes('func ') &&
+			code.includes('import (')
+		) {
+			language = 'Go';
+		} else if (
+			code.includes('fn ') &&
+			(code.includes('let mut ') ||
+				code.includes('impl') ||
+				code.includes('pub struct'))
+		) {
+			language = 'Rust';
+		} else if (
+			code.includes('<?php') ||
+			(code.includes('function') && code.includes('$'))
+		) {
+			language = 'PHP';
+		} else if (
+			code.includes('class ') &&
+			code.includes('def ') &&
+			code.includes('end')
+		) {
+			language = 'Ruby';
+		} else if (code.includes('using System') && code.includes('namespace ')) {
+			language = 'C#';
+		} else if (
+			code.includes('import SwiftUI') ||
+			(code.includes('class') && code.includes('override func'))
+		) {
+			language = 'Swift';
+		} else if (
+			code.includes('fun ') &&
+			code.includes('val ') &&
+			code.includes('kotlin')
+		) {
+			language = 'Kotlin';
+		} else if (code.includes('<!DOCTYPE html>') || code.includes('<html>')) {
+			language = 'HTML';
+		} else if (
+			code.includes('SELECT') &&
+			code.includes('FROM') &&
+			(code.includes('WHERE') || code.includes('JOIN'))
+		) {
+			language = 'SQL';
+		} else if (
+			code.includes('#!/bin/') ||
+			(code.includes('echo ') && code.includes('='))
+		) {
+			language = 'Shell/Bash';
 		}
 
 		// Count lines, functions, classes
